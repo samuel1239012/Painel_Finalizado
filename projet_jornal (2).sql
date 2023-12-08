@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Dez-2023 às 20:17
+-- Tempo de geração: 08-Dez-2023 às 18:27
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.0.25
 
@@ -35,13 +35,6 @@ CREATE TABLE `cinema` (
   `imagem` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `cinema`
---
-
-INSERT INTO `cinema` (`pk_id`, `titulo`, `sinopse`, `elenco`, `imagem`) VALUES
-(1, 'aas', 'um leao em alto mar', 'leão', 'assets/img/cinema/leao-126767138.jpg');
-
 -- --------------------------------------------------------
 
 --
@@ -65,13 +58,6 @@ CREATE TABLE `generos` (
   `tipo_genero` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `generos`
---
-
-INSERT INTO `generos` (`pk_id`, `tipo_genero`) VALUES
-(4, 'Cultura');
-
 -- --------------------------------------------------------
 
 --
@@ -88,14 +74,6 @@ CREATE TABLE `noticia` (
   `imagem` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Extraindo dados da tabela `noticia`
---
-
-INSERT INTO `noticia` (`pk_id`, `palavra_chave`, `texto`, `titulo`, `sub_titulo`, `data_postagem`, `imagem`) VALUES
-(1, 'Carrosssssssss', 'Lorem Ispum Lorem Ispum Lorem Ispum', 'Os Carros Mais Velozes Da Decada de 2010', 'Veja Os Carros Mais Rapidos Da Decada', '2023-11-30 17:10:47', 'assets/img/noticia/jaguar.png'),
-(23, 'Toduro', 'Toguro', 'Toguro', 'Toguro', '2023-11-30 17:26:24', 'assets/img/noticia/toguro-1.webp');
-
 -- --------------------------------------------------------
 
 --
@@ -109,13 +87,6 @@ CREATE TABLE `redacao` (
   `telefone` varchar(20) NOT NULL,
   `cpf` char(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `redacao`
---
-
-INSERT INTO `redacao` (`pk_id`, `nome`, `salario`, `telefone`, `cpf`) VALUES
-(2, 'Samuel', 50000, '12996785435', '12356895436');
 
 -- --------------------------------------------------------
 
@@ -143,20 +114,6 @@ CREATE TABLE `usuarios` (
   `senha` varchar(80) NOT NULL,
   `habilita` smallint(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Extraindo dados da tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`pk_id`, `e_mail`, `senha`, `habilita`) VALUES
-(2, 'costasamuca8@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1),
-(14, 'samuel@gmail.com', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 1),
-(20, 'Igor@gmail.com', 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855', 1),
-(21, 'Igor123@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1),
-(22, 'dsdsadsds@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1),
-(23, 'sadasdas@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1),
-(24, 'evelyn@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 1),
-(27, 'aaaaa@gmail.com', '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -212,7 +169,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `cinema`
 --
 ALTER TABLE `cinema`
-  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `destaque_home`
@@ -224,19 +181,19 @@ ALTER TABLE `destaque_home`
 -- AUTO_INCREMENT de tabela `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `redacao`
 --
 ALTER TABLE `redacao`
-  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `revisor`
@@ -248,7 +205,7 @@ ALTER TABLE `revisor`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `pk_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
